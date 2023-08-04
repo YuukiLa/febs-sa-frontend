@@ -1,0 +1,20 @@
+{
+  "theme": "light",
+  "colorWeak": false,
+  "navbar": true,
+  "menu": true,
+  "topMenu": false,
+  "hideMenu": false,
+  "menuCollapse": false,
+  "footer": true,
+  "themeColor": "#165DFF",
+  "menuWidth": 220,
+  "globalSettings": false,
+  "device": "desktop",
+  "tabBar": true,
+  "menuFromServer": true,
+  "serverMenu": [],
+  "hasRouter": false,
+  "fullLoading": false,
+  "fullLoadingTips": "加载中..."
+}

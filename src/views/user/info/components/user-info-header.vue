@@ -1,0 +1,80 @@
+<template>
+  <div class="header">
+    <a-space :size="12" direction="vertical" align="center">
+      <a-avatar
+        :style="{
+          verticalAlign: 'middle',
+          backgroundColor: '#14a9f8',
+          marginRight: '8px',
+          cursor: 'pointer',
+        }"
+        :size="64"
+      >
+        <template #trigger-icon>
+          <icon-camera />
+        </template>
+        {{ userInfo.realName }}
+      </a-avatar>
+      <a-typography-title :heading="6" style="margin: 0">
+        {{ userInfo.realName }}
+      </a-typography-title>
+      <div class="user-msg">
+        <a-space :size="18">
+          <div>
+            <icon-user />
+            <a-typography-text>{{ userInfo.username }}</a-typography-text>
+          </div>
+          <div>
+            <icon-home />
+            <a-typography-text>
+              {{ userInfo.deptName }}
+            </a-typography-text>
+          </div>
+          <div>
+            <icon-location />
+            <a-typography-text>{{ userInfo.roleName }}</a-typography-text>
+          </div>
+        </a-space>
+      </div>
+    </a-space>
+  </div>
+</template>
+
+<script lang="ts" setup>
+  import { useUserStore } from '@/store'
+
+  const userInfo = useUserStore()
+  console.log(userInfo)
+</script>
+
+<style scoped lang="less">
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 204px;
+    color: var(--gray-10);
+    background: url(//p3-armor.byteimg.com/tos-cn-i-49unhts6dw/41c6b125cc2e27021bf7fcc9a9b1897c.svg~tplv-49unhts6dw-image.image)
+      no-repeat;
+    background-size: cover;
+    border-radius: 4px;
+
+    :deep(.arco-avatar-trigger-icon-button) {
+      color: rgb(var(--arcoblue-6));
+
+      :deep(.arco-icon) {
+        vertical-align: -1px;
+      }
+    }
+
+    .user-msg {
+      .arco-icon {
+        color: rgb(var(--gray-10));
+      }
+
+      .arco-typography {
+        margin-left: 6px;
+      }
+    }
+  }
+</style>
