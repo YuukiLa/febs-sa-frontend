@@ -25,8 +25,7 @@ import {onMounted, ref} from "vue"
 import usePage from "@/hooks/pages"
 import {getJobLogs} from "@/api/job/jobLog"
 
-const {pageModel, handlePageChange, handlePageSizeChange} = usePage(() => {
-})
+const {pageModel, handlePageChange, handlePageSizeChange} = usePage(loadJobLogData)
 const data = ref<any[]>([])
 const column: TableColumnData[] = [
   {
